@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="Prabhkirat Singh — 3D Portfolio">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#8b6cff"/>
+      <stop offset="1" stop-color="#ff4d9d"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#ff9ad0"/>
+      <stop offset="0.35" stop-color="#8b6cff"/>
+      <stop offset="0.75" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#1b0f6b"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b6cff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#8b6cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgGlowA" cx="85%" cy="10%" r="60%">
+      <stop offset="0" stop-color="#8b6cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#05060f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgGlowB" cx="5%" cy="100%" r="55%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#05060f" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#8b6cff" stroke-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="400" fill="#05060f"/>
+  <rect width="1280" height="400" fill="url(#grid)"/>
+  <rect width="1280" height="400" fill="url(#bgGlowA)"/>
+  <rect width="1280" height="400" fill="url(#bgGlowB)"/>
+
+  <!-- orb -->
+  <g transform="translate(1020 200)">
+    <circle r="190" fill="url(#glow)"/>
+    <circle r="112" fill="url(#orb)"/>
+    <ellipse rx="170" ry="52" fill="none" stroke="#22d3ee" stroke-width="2" transform="rotate(-18)" opacity="0.9"/>
+    <ellipse rx="150" ry="150" fill="none" stroke="#8b6cff" stroke-width="1.5" stroke-dasharray="4 8" opacity="0.8"/>
+    <ellipse rx="190" ry="64" fill="none" stroke="#ff4d9d" stroke-width="2" transform="rotate(24)" opacity="0.85"/>
+    <circle cx="160" cy="-58" r="7" fill="#22d3ee"/>
+    <circle cx="-150" cy="62" r="6" fill="#ff4d9d"/>
+  </g>
+
+  <!-- shards -->
+  <g fill="none" stroke-width="2" opacity="0.8">
+    <polygon points="760,70 800,110 760,150 720,110" stroke="#b6ff5c"/>
+    <polygon points="880,300 920,350 840,350" stroke="#ff4d9d"/>
+    <rect x="1190" y="60" width="44" height="44" stroke="#22d3ee" transform="rotate(20 1212 82)"/>
+  </g>
+
+  <!-- text -->
+  <text x="70" y="108" font-family="'Courier New', monospace" font-size="20" fill="#22d3ee" letter-spacing="3">HELLO, WORLD. I'M</text>
+  <text x="66" y="198" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="82" font-weight="800" fill="#eef0ff" letter-spacing="-2">Prabhkirat</text>
+  <text x="66" y="282" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="82" font-weight="800" fill="url(#g)" letter-spacing="-2">Singh</text>
+  <text x="70" y="340" font-family="'Courier New', monospace" font-size="22" fill="#a3a8c8">Python Developer  ·  AI Engineering Enthusiast  ·  3D Portfolio</text>
+  <rect x="70" y="360" width="140" height="4" rx="2" fill="url(#g)"/>
+</svg>
