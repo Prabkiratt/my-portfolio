@@ -14,11 +14,14 @@
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   const state = {
+    party: 0,
     mx: 0, my: 0,          // smoothed mouse (-1..1)
     tmx: 0, tmy: 0,        // target mouse
     scroll: 0, vel: 0,
     pulse: 0,
   };
+
+  window.__pf = { state };
 
   /* ---------- LOADER ---------- */
   const loader = $('#loader');
@@ -59,10 +62,11 @@
     twin:     ['#0e7490', '#22d3ee', '#ff4d9d'],
     projects: ['#9d174d', '#ff4d9d', '#ffb347'],
     skills:   ['#0e7490', '#22d3ee', '#b6ff5c'],
+    stickers: ['#7c2d12', '#ffb347', '#ff4d9d'],
     journey:  ['#312e81', '#8b6cff', '#ff4d9d'],
     contact:  ['#4c1d95', '#ff4d9d', '#22d3ee'],
   };
-  const sectionIds = ['home', 'about', 'twin', 'projects', 'skills', 'journey', 'contact'];
+  const sectionIds = ['home', 'about', 'twin', 'projects', 'skills', 'stickers', 'journey', 'contact'];
   const sections = sectionIds.map((id) => document.getElementById(id));
 
   // Orb anchors in normalised screen space (-1..1), per section (desktop / mobile)
@@ -72,6 +76,7 @@
     twin:     { d: [-0.96, 0.78, 0.5], m: [0.85, 0.85, 0.35] },
     projects: { d: [0.95, 0.7, 0.58],  m: [0.85, 0.82, 0.42] },
     skills:   { dyn: true },
+    stickers: { d: [0.96, 0.72, 0.5], m: [0.85, 0.85, 0.35] },
     journey:  { d: [0.92, -0.15, 0.55], m: [0.9, 0.7, 0.4] },
     contact:  { d: [0.0, 0.3, 1.5],    m: [0.0, 0.4, 1.1] },
   };
@@ -323,6 +328,7 @@
     const dv = y - lastY; lastY = y;
     state.vel += (Math.min(Math.abs(dv), 80) - state.vel) * 0.1;
     state.pulse *= 0.94;
+    if (state.party) state.pulse = Math.max(state.pulse, 0.55 + 0.45 * Math.sin(time * 7));
 
     if (renderer) {
       // which section pair are we between?

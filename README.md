@@ -31,6 +31,11 @@
 | 💬 **Chat with the twin** | A scripted (no cloud AI) assistant that answers questions about projects, stack, education and contact — and makes the avatar "talk". |
 | 🎬 **Scroll choreography** | The orb glides between anchors and re-colours itself for every section; velocity makes it wobble. |
 | 🖱️ **Micro-interactions** | Custom cursor, magnetic buttons, 3D tilt cards with glare, count-up stats, a draggable 3D skill sphere and a timeline that fills as you scroll. |
+| 🎟️ **Sticker Wall** | A laptop lid covered in 16 draggable, throwable, tap-to-spin stickers with holographic foil shine — including die-cut stickers of me (downloadable as PNG or a WhatsApp-ready 512×512 `.webp`). |
+| ⌨️ **Command palette** | Press <kbd>Ctrl</kbd>+<kbd>K</kbd> (or `/`) to jump to any section, switch twin modes, explode the avatar, download the résumé and more. |
+| 🎉 **Party mode** | Hidden Konami code (↑ ↑ ↓ ↓ ← → ← → B A) — confetti cannons, emoji rain, a hue-cycling universe. |
+| 🐙 **Live GitHub feed** | Real repos pulled from the public GitHub API at runtime (hidden automatically if offline or rate-limited). |
+| 🔊 **Sound FX** | Optional WebAudio-synth blips and booms — off by default. |
 | 📱 **Responsive & accessible** | Mobile layout, `prefers-reduced-motion` support and graceful fallback if WebGL is unavailable. |
 
 ## 🧭 Sections
@@ -38,10 +43,11 @@
 1. **Home** — shader orb, typed role rotator, call-to-action
 2. **About** — summary, holographic 3D ID card, stats
 3. **AI Twin** — particle avatar + chat
-4. **Projects** — SmartCrowd, Hostel Complaint Management System, Data & AI projects
+4. **Projects** — SmartCrowd, Hostel Complaint Management System, Data & AI projects, live GitHub feed
 5. **Skills** — interactive 3D tag-cloud sphere + grouped toolkit
-6. **Journey** — education, training and certifications timeline
-7. **Contact** — email, LinkedIn, GitHub, phone and résumé download
+6. **Sticker Wall** — draggable stickers on a laptop lid
+7. **Journey** — education, training and certifications timeline
+8. **Contact** — email, LinkedIn, GitHub, phone and résumé download
 
 ## 🛠️ Tech stack
 
@@ -74,10 +80,12 @@ my-portfolio/
 ├── index.html                    # markup for every section
 ├── style.css                     # design tokens, layout, animations
 ├── main.js                       # Three.js scene, scroll logic, AI twin, chat
+├── extras.js                     # stickers, command palette, party mode, sound, GitHub feed
 ├── assets/
 │   ├── avatar-data.js            # embedded portrait used to build the particles
 │   ├── avatar_cutout.png         # background-removed portrait
 │   ├── avatar_head.png           # head & shoulders crop for the ID card
+│   ├── stickers/                 # die-cut sticker PNGs + WhatsApp .webp
 │   └── banner.svg                # README banner
 └── Prabhkirat_Singh_Resume.pdf   # downloadable résumé
 ```

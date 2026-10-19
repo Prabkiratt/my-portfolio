@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#05060f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Gurmukhi:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,6 +43,7 @@
     <a href="#twin">AI Twin</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#stickers">Stickers</a>
     <a href="#journey">Journey</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -96,6 +97,7 @@
     <div class="mouse"><i></i></div>
     <span>scroll</span>
   </div>
+  <div class="hero-stickers" id="heroStickers" aria-hidden="true"></div>
   <p class="orb-hint" aria-hidden="true">✦ move your mouse to tilt the orb · click to pulse it</p>
 </section>
 
@@ -291,6 +293,13 @@
     </article>
 
   </div>
+  <div class="gh-live reveal" id="ghLive" hidden>
+    <div class="gh-head">
+      <span class="eyebrow">Live from GitHub</span>
+      <div class="gh-stats mono" id="ghStats"></div>
+    </div>
+    <div class="gh-grid" id="ghGrid"></div>
+  </div>
 </section>
 
 <!-- SKILLS -->
@@ -331,10 +340,34 @@
   </div>
 </section>
 
+<!-- STICKER WALL -->
+<section id="stickers" class="section stickers">
+  <div class="section-head reveal">
+    <span class="eyebrow">05 — Sticker Wall</span>
+    <h2>Slap a <em>sticker</em> on it.</h2>
+    <p class="twin-sub">Drag them, throw them, tap to spin — and yes, that's me on a sticker. Grab your own copy below.</p>
+  </div>
+
+  <div class="laptop reveal">
+    <div class="lid" id="stickerWall">
+      <div class="lid-logo" aria-hidden="true"></div>
+      <span class="lid-hint mono" aria-hidden="true">drag · throw · tap to spin</span>
+    </div>
+    <div class="laptop-base" aria-hidden="true"></div>
+    <div class="sticker-actions">
+      <button class="chip-btn" id="stShuffle">🔀 Shuffle</button>
+      <button class="chip-btn" id="stAdd">➕ Add sticker</button>
+      <button class="chip-btn" id="stReset">↺ Reset</button>
+      <a class="chip-btn solid" href="assets/stickers/me-sticker-512.png" download="prabhkirat-sticker.png">⬇ Download my sticker</a>
+      <a class="chip-btn" href="assets/stickers/me-whatsapp.webp" download="prabhkirat-whatsapp-sticker.webp">WhatsApp .webp</a>
+    </div>
+  </div>
+</section>
+
 <!-- JOURNEY -->
 <section id="journey" class="section">
   <div class="section-head reveal">
-    <span class="eyebrow">05 — Journey</span>
+    <span class="eyebrow">06 — Journey</span>
     <h2>Learning in <em>public</em>, one milestone at a time.</h2>
   </div>
 
@@ -410,7 +443,7 @@
 <!-- CONTACT -->
 <section id="contact" class="section contact">
   <div class="contact-card reveal">
-    <span class="eyebrow">06 — Contact</span>
+    <span class="eyebrow">07 — Contact</span>
     <h2>Let's build something <em>remarkable</em>.</h2>
     <p>
       Looking for a Python Developer or IT Intern who ships, learns fast and cares about the details?
@@ -453,10 +486,29 @@
 
 </main>
 
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="party-banner" id="partyBanner" aria-hidden="true">🎉 PARTY MODE 🎉</div>
+
+<!-- COMMAND PALETTE -->
+<div class="palette" id="palette" hidden>
+  <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="pal-input-wrap">
+      <span aria-hidden="true">⌘</span>
+      <input id="palInput" type="text" placeholder="Type a command…  (try: matrix, party, sticker, github)" autocomplete="off" spellcheck="false">
+      <kbd>esc</kbd>
+    </div>
+    <ul id="palList" role="listbox"></ul>
+    <div class="pal-foot mono"><span>↑ ↓ navigate</span><span>↵ run</span><span>esc close</span></div>
+  </div>
+</div>
+<button class="fab fab-k" id="kHint" aria-label="Open command palette"><span class="k-desk"><kbd>Ctrl</kbd><kbd>K</kbd></span><span class="k-mob">⚡ Menu</span></button>
+<button class="fab fab-sound" id="soundBtn" aria-pressed="false" aria-label="Toggle sound effects" title="Sound effects (off)">🔇</button>
+
 <div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard ✓</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="assets/avatar-data.js"></script>
 <script src="main.js"></script>
+<script src="extras.js"></script>
 </body>
 </html>
